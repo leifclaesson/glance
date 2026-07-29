@@ -391,6 +391,8 @@
         <img class="gal-slide active" src="assets/shot-1.png" alt="Glance showing a design brief: a purple Important callout and a Mermaid flowchart" width="2067" height="1439">
         <img class="gal-slide" src="assets/shot-2.png" alt="Glance showing a GFM table of latency figures and a KaTeX display formula" width="2067" height="1439">
         <img class="gal-slide" src="assets/shot-3.png" alt="Glance showing syntax-highlighted Rust and a task list with ticked boxes" width="2067" height="1439">
+        <img class="gal-slide" src="assets/shot-4.png" alt="Glance showing Danger, Caution, Success and Question callouts, each in its own colour" width="2067" height="1439">
+        <img class="gal-slide" src="assets/shot-5.png" alt="Glance showing a Bug callout and a Mermaid pie chart of latency by stage" width="2067" height="1439">
       </div>
       <div class="gal-rail" id="galRail"></div>
       <p class="cap gal-cap" id="galCap">Callouts with their own colour, icon and dog-ear &mdash; and a Mermaid flowchart, laid out live.</p>
@@ -515,7 +517,7 @@
     if (!gal || !rail || !capEl) { return; }
 
     var slides = [].slice.call(gal.querySelectorAll('.gal-slide'));
-    var caps = ["Callouts with their own colour, icon and dog-ear &mdash; and a Mermaid flowchart, laid out live.", "GFM tables with column alignment, and KaTeX math set the way a typesetter would.", "Syntax-highlighted code, and task boxes you can actually tick."];
+    var caps = ["Callouts with their own colour, icon and dog-ear &mdash; and a Mermaid flowchart, laid out live.", "GFM tables with column alignment, and KaTeX math set the way a typesetter would.", "Syntax-highlighted code, and task boxes you can actually tick.", "The full admonition vocabulary &mdash; not just GitHub's five, and each with its own colour, icon and hazard edge.", "Mermaid charts too &mdash; drawn by the same renderer that checks them for collisions."];
     if (slides.length < 2) { return; }
 
     var HOLD = 4200;
