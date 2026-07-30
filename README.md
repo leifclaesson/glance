@@ -1,6 +1,6 @@
 # Glance
 
-**The Markdown viewer Windows never had.** It only ever looks.
+**The Markdown viewer that needed to exist.** It only ever looks.
 
 A lean, live Markdown viewer for Windows. It reads the files you already have,
 in place, and reloads the instant you save. No vault. No import. No account, no
