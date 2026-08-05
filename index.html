@@ -254,12 +254,18 @@
   /* ---- download ---- */
   .download{text-align:center}
   .dl-card{
-    max-width:640px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
+    max-width:780px; margin:0 auto; background:var(--paper); border:1px solid var(--line);
     border-radius:20px; padding:clamp(28px,5vw,48px); box-shadow:var(--shadow);
   }
   .dl-card h2{margin-bottom:8px}
   .dl-card p{color:var(--ink-dim); margin:0 auto 24px; max-width:44ch}
   .dl-btns{display:flex; gap:14px; justify-content:center; flex-wrap:wrap}
+  .dl-plats{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:22px; margin-top:26px; text-align:center}
+  .dl-plat{padding:22px 18px; border-radius:16px; border:1px solid var(--line); background:var(--paper2)}
+  .dl-plat .pn{font-family:var(--mono); font-weight:700; color:var(--ink); margin-bottom:6px}
+  .dl-plat p{color:var(--ink-dim); margin:0 auto 16px; max-width:34ch; font-size:15px}
+  .dl-plat .dl-btns{gap:10px}
+  .dl-plat .btn{font-size:14px; padding:11px 18px}
   .btn.ghost{background:var(--paper2); color:var(--ink); border:1px solid var(--line); box-shadow:none}
 
   /* ---- family footer ---- */
@@ -304,15 +310,15 @@
       <div style="order:2">
         <p class="kicker"><span class="live" id="heroLive"></span> Now viewing &middot; read&#8209;only</p>
         <h1 class="word"><span class="g">Glance</span></h1>
-        <p class="subtitle">Live Markdown &amp; image viewer for Windows &middot; it only ever looks.</p>
+        <p class="subtitle">Live Markdown &amp; image viewer &middot; it only ever looks.</p>
         <p class="tagline">The Markdown viewer that needed to exist.</p>
         <p class="lead">Point it at any <code>.md</code> file and read it rendered like Obsidian &mdash; but with
           <b>no vault, no import, no config</b>. Glance reads your files <b>live, in place</b>, and reloads the
           moment they change on disk. It watches. It never touches.</p>
         <div class="cta">
-          <a class="btn" href="#download">Download for Windows
+          <a class="btn" href="#download">Download Glance
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 2v9M4 7l4 4 4-4"/></svg></a>
-          <span class="fineprint">Free &middot; closed source &middot; no telemetry &middot; Windows 10/11 &middot; 64&#8209;bit</span>
+          <span class="fineprint">Free &middot; closed source &middot; no telemetry &middot; 64&#8209;bit</span>
         </div>
       </div>
       <div style="order:1">
@@ -437,13 +443,29 @@
       <div class="dl-card">
         <p class="eyebrow" style="justify-content:center">Get Glance</p>
         <h2>Free. Closed source. Yours to look through.</h2>
-        <p>A single signed installer for Windows 10 and 11, 64&#8209;bit. No account, no telemetry, no vault to feed.</p>
-        <div class="dl-btns">
-          <a class="btn" href="https://github.com/leifclaesson/glance/releases/download/v1.2.0/Glance_1.2.0_x64-setup.exe">Download the installer
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 2v9M4 7l4 4 4-4"/></svg></a>
-          <a class="btn ghost" href="https://github.com/leifclaesson/glance/releases/tag/v1.2.0">Release notes</a>
+        <p>No account, no telemetry, no vault to feed.</p>
+        <div class="dl-plats">
+          <div class="dl-plat">
+            <div class="pn">Windows</div>
+            <p>One signed installer for Windows 10 and 11, 64&#8209;bit.</p>
+            <div class="dl-btns">
+              <a class="btn" href="https://github.com/leifclaesson/glance/releases/download/v1.2.0/Glance_1.2.0_x64-setup.exe">Installer <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 2v9M4 7l4 4 4-4"/></svg></a>
+              <a class="btn ghost" href="https://github.com/leifclaesson/glance/releases/tag/v1.2.0">Notes</a>
+            </div>
+            <p style="margin:16px auto 0" class="fineprint">Version 1.2.0 &middot; 11&#160;MB</p>
+          </div>
+          <div class="dl-plat">
+            <div class="pn">Linux</div>
+            <p>RPM and DEB, 64&#8209;bit Intel/AMD and ARM64. Needs WebKitGTK&#160;4.1 and GTK&#160;3.</p>
+            <div class="dl-btns">
+              <a class="btn" href="https://github.com/leifclaesson/glance/releases/download/v1.3.0/Glance-1.3.0-1.x86_64.rpm">RPM <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 2v9M4 7l4 4 4-4"/></svg></a>
+              <a class="btn" href="https://github.com/leifclaesson/glance/releases/download/v1.3.0/Glance_1.3.0_amd64.deb">DEB <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 2v9M4 7l4 4 4-4"/></svg></a>
+              <a class="btn ghost" href="https://github.com/leifclaesson/glance/releases/tag/v1.3.0">ARM64 &amp; notes</a>
+            </div>
+            <p style="margin:16px auto 0" class="fineprint">Version 1.3.0 &middot; 16&#160;MB</p>
+          </div>
         </div>
-        <p style="margin:22px auto 0" class="fineprint">Version 1.2.0, 11&#160;MB. Free to use, personal and commercial. Closed source. <a href="LICENSE.txt">Full terms</a>.</p>
+        <p style="margin:26px auto 0" class="fineprint">Free to use, personal and commercial. Closed source. <a href="LICENSE.txt">Full terms</a>.</p>
       </div>
     </div>
   </section>
