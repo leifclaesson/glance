@@ -78,15 +78,8 @@
   .hero-grid{
     position:relative;
     display:grid; grid-template-columns:.88fr 1.12fr; gap:clamp(24px,5vw,60px); /* EDIT2: mascot column now first/narrow (left), headline second/wide (right) */
-    align-items:center; padding:clamp(40px,7vw,82px) 0 clamp(30px,5vw,54px);
+    align-items:center; padding:clamp(40px,7vw,82px) clamp(16px,4vw,32px) clamp(30px,5vw,54px);
   }
-  .kicker{
-    display:inline-flex; align-items:center; gap:9px;
-    font-family:var(--mono); font-size:12px; letter-spacing:.18em; text-transform:uppercase;
-    color:var(--blue-deep); margin:0 0 16px;
-  }
-  .kicker .live{width:8px;height:8px;border-radius:50%;background:var(--blue);opacity:.35;box-shadow:0 0 0 0 rgba(59,110,245,.5)}
-  .kicker .live.on{opacity:1;box-shadow:0 0 0 5px rgba(59,110,245,.14)}
   h1.word{
     font-weight:800; margin:0; font-size:clamp(40px,8vw,78px); line-height:.98;
     letter-spacing:-.028em; color:var(--ink);
@@ -308,7 +301,6 @@
     <div class="wrap hero-grid">
       <!-- EDIT2: mascot-left / headline-right flip via CSS order on the two grid columns (easy to revert: drop the order styles) -->
       <div style="order:2">
-        <p class="kicker"><span class="live" id="heroLive"></span> Now viewing &middot; read&#8209;only</p>
         <h1 class="word"><span class="g">Glance</span></h1>
         <p class="subtitle">Live Markdown &amp; image viewer &middot; it only ever looks.</p>
         <p class="tagline">The Markdown viewer that needed to exist.</p>
@@ -497,10 +489,6 @@
 <script>
   // Motion is JS-driven (not CSS-animation-gated), so it runs under reduced-motion too.
   (function(){
-    // hero "live" reload pulse
-    var live = document.getElementById('heroLive');
-    if (live){ setInterval(function(){ live.classList.toggle('on'); }, 1100); }
-
     // "Watching <format>" ticker in the pledge strip
     var fmt = document.getElementById('watchFmt');
     var formats = ['.md', '.png', '.jsonl', '.txt', '.svg', '.log', '.webp', '.ico', '.markdown'];
