@@ -139,8 +139,6 @@
   }
   .pledge b{color:var(--ink)}
   .pledge .sep{color:var(--edge)}
-  .pledge .watch{color:var(--blue-deep)}
-  .pledge .watch .ft{color:var(--teal); font-weight:600}
 
   /* ---- sections ---- */
   section{padding:clamp(46px,7vw,84px) 0}
@@ -288,8 +286,7 @@
     <div class="wrap"><div class="run">
       <span><b>Read&#8209;only</b></span><span class="sep">&bull;</span>
       <span><b>Never writes</b></span><span class="sep">&bull;</span>
-      <span><b>Live, in place</b></span><span class="sep">&bull;</span>
-      <span class="watch">Watching <span class="ft" id="watchFmt">.md</span></span>
+      <span><b>Live, in place</b></span>
     </div></div>
   </div>
 
@@ -440,21 +437,8 @@
   <div class="wrap">
     <footer class="legal">
       <span>&copy; 2026 Leif Claesson &middot; Free to use &middot; Closed source &middot; No warranty</span>
-      <span>Glance &middot; built in Rust + Tauri</span>
     </footer>
   </div>
-
-<script>
-  // Motion is JS-driven (not CSS-animation-gated), so it runs under reduced-motion too.
-  (function(){
-    // "Watching <format>" ticker in the pledge strip
-    var fmt = document.getElementById('watchFmt');
-    var formats = ['.md', '.png', '.jsonl', '.txt', '.svg', '.log', '.webp', '.ico', '.markdown'];
-    var fi = 0;
-    if (fmt){ setInterval(function(){ fi = (fi+1) % formats.length; fmt.textContent = formats[fi]; }, 1400); }
-
-  })();
-</script>
 
 <script>
   /* Rotating screenshot gallery. Driven by REAL elapsed time (performance.now)
